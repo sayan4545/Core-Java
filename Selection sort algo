@@ -1,0 +1,36 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static void selectionSort(int arr[]) {
+		
+        for(int i=0;i<arr.length-1;i++){
+            int index_min = i;
+            for(int j =i+1;j<arr.length;j++){
+                if(arr[j]<arr[index_min]){
+                    index_min = j;
+                }
+            }
+            int temp = arr[index_min];
+            arr[index_min]=arr[i];
+            arr[i]=temp;
+        }
+		
+	}
+	public static void printsorted(int arr[]){
+		for(int i =0;i<arr.length;i++){
+			System.out.print(arr[i]+" ");
+		}
+    System.out.println();
+	}
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		int arr[]= new int[8];
+		System.out.println("Enter the elements of the array: ");
+		for(int i =0;i<arr.length;i++){
+			int n = sc.nextInt();
+			arr[i]=n;
+		}
+		selectionSort(arr);
+		printsorted(arr);
+	}
+}
